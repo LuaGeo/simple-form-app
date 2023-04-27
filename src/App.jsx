@@ -1,6 +1,13 @@
 import "./App.css";
 import Footer from "./components/Footer";
 import { useState } from "react";
+import Form from "./components/Form";
+
+// fontawsome
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+library.add(faEye);
 
 function App() {
   const [username, setUsername] = useState("");
@@ -22,64 +29,20 @@ function App() {
   return (
     <>
       <header>Create account</header>
-      <div className="app">
-        <form onSubmit={handleSUbmit}>
-          <div>
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              placeholder="Name"
-              onChange={(event) => {
-                // console.log(event.target.value);
-                setUsername(event.target.value);
-              }}
-              value={username}
-            />
-          </div>
 
-          <div>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="toto@email.com"
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-              value={email}
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input
-              className={errorSign}
-              type="password"
-              id="password"
-              placeholder="password"
-              onChange={(event) => {
-                setPassword(event.target.value);
-              }}
-              value={password}
-            />
-          </div>
-          <div>
-            <label htmlFor="confirmPassword">Confirm your password</label>
-            <input
-              className={errorSign}
-              type="password"
-              id="confirmPassword"
-              placeholder="password"
-              onChange={(event) => {
-                setConfirmPassword(event.target.value);
-              }}
-              value={confirmPassword}
-            />
-          </div>
-          <p>{errorMessage}</p>
-          <button type="submit">Register</button>
-        </form>
-      </div>
+      <Form
+        handleSUbmit={handleSUbmit}
+        username={username}
+        email={email}
+        errorMessage={errorMessage}
+        setUsername={setUsername}
+        setEmail={setEmail}
+        setPassword={setPassword}
+        setConfirmPassword={setConfirmPassword}
+        errorSign={errorSign}
+        password={password}
+        confirmPassword={confirmPassword}
+      />
 
       <Footer tech="React" school="Le Reacteur" student="LuA" />
     </>

@@ -37,6 +37,17 @@ input {
   box-sizing: border-box;
 }
 
+.inputWithEyeIcon {
+  position: relative;
+}
+
+#icon {
+  color: #615f6b;
+  position: absolute;
+  right: 10px;
+  top: 33px;
+}
+
 .border {
   border: red 1px solid;
 }
@@ -57,6 +68,19 @@ button {
   font-size: 20px;
   border-radius: 5px;
   margin-bottom: 110px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0px 6px #999;
+}
+
+button:hover {
+  background-color: #5541a1;
+}
+
+button:active {
+  background-color: #5541a1;
+  box-shadow: 0 3px #706f6f, inset 0 0 15px #221b41;
+  transform: translateY(3px);
 }
 
 footer {
