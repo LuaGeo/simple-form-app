@@ -9,11 +9,13 @@ function App() {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const [errorMessage, setErrorMessage] = useState("");
+  const [errorSign, setErrorSign] = useState("");
 
   const handleSUbmit = (event) => {
     event.preventDefault();
     if (password !== confirmPassword) {
       setErrorMessage("Les mots de passe ne sont pas identiques");
+      setErrorSign("border");
     }
   };
 
@@ -51,6 +53,7 @@ function App() {
           <div>
             <label htmlFor="password">Password</label>
             <input
+              className={errorSign}
               type="password"
               id="password"
               placeholder="password"
@@ -63,6 +66,7 @@ function App() {
           <div>
             <label htmlFor="confirmPassword">Confirm your password</label>
             <input
+              className={errorSign}
               type="password"
               id="confirmPassword"
               placeholder="password"
