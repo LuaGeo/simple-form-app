@@ -96,3 +96,21 @@ footer > p {
 span {
   font-weight: bold;
 }
+
+.stepTwo {
+  width: 100vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.stepTwo > div {
+  background-color: #d3d3d3;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.stepTwo > div > p {
+  color: #000;
+  font-size: 16px;
+}
